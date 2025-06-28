@@ -27,7 +27,9 @@ try:
         select_query="""select * from students;"""
         cursor.execute(select_query)
         res=cursor.fetchall()
-        for row in res:
-            print(row)
+        with open("mysql1.txt","w") as file:
+            for row in res:
+                file.write(f"{row} \n")
+                print(row)
 finally:
     connection.close()
