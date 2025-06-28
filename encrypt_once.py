@@ -7,7 +7,7 @@ def Generate_key():
     print("key saved to secret key !")
 if __name__ =="__main__":
 #uncomment this only first time
-    Generate_key()
+    #Generate_key()
     encrypt=encrypt_password("root")
     print("Encrypted password(copy to this password_util) :")
     print(encrypt)
