@@ -1,12 +1,14 @@
 import pymysql
 from pymysql.cursors import DictCursor
+from password_utils import get_decrypt_password
 connection=pymysql.connect(
     host="localhost",
     user="root",
-    password="root",
+    password=get_decrypt_password(),
     database="test",
     cursorclass=DictCursor
 )
+print(get_decrypt_password())
 try:
     with connection.cursor() as cursor:
         create_query="""Create table if not exists students (
